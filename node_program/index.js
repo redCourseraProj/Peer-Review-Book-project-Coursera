@@ -3,9 +3,9 @@ const axios = require('axios');
 const ip = 'localhost:5000';
 
 getAllBooksUsingAsync()
-searchByISBNUsingPromises(1);
-searchByAuthorUsingPromises("Chinua Achebe");
-searchByTitleUsingPromises("Things Fall Apart");
+searchByISBNUsingPromises();
+searchByAuthorUsingPromises();
+searchByTitleUsingPromises();
 
 
 async function getAllBooksUsingAsync() {
@@ -13,7 +13,7 @@ async function getAllBooksUsingAsync() {
     console.log('All Books');
     console.log(response.data);
 }
-function searchByISBNUsingPromises(isbn) {
+function searchByISBNUsingPromises() {
     axios.get('http://localhost:5000/isbn/1')
         .then(response => {
             // Handle response
@@ -24,7 +24,7 @@ function searchByISBNUsingPromises(isbn) {
             console.log(err);
         });
 }
-function searchByAuthorUsingPromises(author){
+function searchByAuthorUsingPromises(){
      axios.get('http://localhost:5000/author/Chinua Achebe')
         .then(response => {
             // Handle response
@@ -35,7 +35,7 @@ function searchByAuthorUsingPromises(author){
             console.log(err);
         });
 }
-function searchByTitleUsingPromises(title){
+function searchByTitleUsingPromises(){
      axios.get('http://localhost:5000/title/Things Fall Apart')
         .then(response => {
             // Handle response
